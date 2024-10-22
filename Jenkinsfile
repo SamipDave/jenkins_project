@@ -8,8 +8,16 @@ pipeline{
                     gitCheckOut(
                         branch: "mian",
                         url: "https://github.com/SamipDave/jenkins_project.git"
-                    )
+                 )
             }
+        }
+        stage('unit test mvn'){
+            steps{
+                script{
+                    mvnTest()
+                }
+            }
+
         }
     }
 }
