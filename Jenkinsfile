@@ -2,7 +2,14 @@
 
 pipeline{
     agent any
+
+    parameters{
+        choice(name: 'action', choices: 'create\ndelete', description: 'Choose Create/Destroy')
+    }
     stages{
+        
+        when { expression { param.action == 'create' }}
+
         stage('git check out'){
             steps{
                     gitCheckOut(
