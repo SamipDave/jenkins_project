@@ -3,14 +3,10 @@
 pipeline{
     agent any
 
-    parameters{
-        choice(name: 'action', choices: 'create\ndelete', description: 'Choose Create/Destroy')
-    }
     stages{
 
         stage('git check out'){
 
-        when { expression {param.action == 'create' }}
         }
             steps{
                     gitCheckOut(
