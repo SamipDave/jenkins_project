@@ -41,12 +41,12 @@ pipeline{
                 }
             } 
         }
-        stage('static code analysis'){
+        stage('static code analysis: Sonarqube'){
             when { expression { params.action == 'create' }}
-            steps{
-                script{
-                    def SonarQubecredentialsId = 'sonarqube-api'
-                    staticCodeAnalysis (SonarQubecredentialsId)
+                steps{
+                    script{
+                        def SonarQubecredentialsId = 'sonarqube-api'
+                        staticCodeAnalysis (SonarQubecredentialsId)
                 }
             }
         }
