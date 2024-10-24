@@ -11,7 +11,7 @@ pipeline{
 
     stages{
 
-        when{expression { param.action == 'create'}}
+        when { expression { param.action == 'create'}}
         stage('Git Checkout'){
             steps{
                 script{
@@ -24,7 +24,7 @@ pipeline{
             }
         }
         stage('unit Test maven'){
-            when{expression { param.action == 'create' }}
+        when { expression { param.action == 'create' }}
             steps{
                 script{
                     mvnTest()
@@ -33,7 +33,7 @@ pipeline{
             }
         }
         stage('integration test maven'){
-            when{expression { param.action == 'create' }}
+        when { expression { param.action == 'create' }}
             steps{
                 script{
                     mvnIntegrationTest()
