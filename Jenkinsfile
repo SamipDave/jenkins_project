@@ -9,7 +9,7 @@ pipeline{
             steps{
                 script{
 
-                    gitCheckout(
+                    gitCheckOut(
                         branch: "main",
                         url: "https://github.com/SamipDave/jenkins_project.git"
                     )
