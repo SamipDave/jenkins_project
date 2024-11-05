@@ -85,6 +85,8 @@ pipeline{
             when { expression { params.action == 'create' }}
                 steps{
                    script{
+                        sh 'trivy image --cache-dir/var/lib/jenkins/workspace/trivy-cache samipdave/javaapp:v3'
+
                         dockerImageScan("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                 }
             }
