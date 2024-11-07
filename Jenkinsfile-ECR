@@ -103,7 +103,7 @@ pipeline{
                             aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 471112861352.dkr.ecr.us-east-1.amazonaws.com
                              """
                     }
-                        ecrImagePush("${params.aws_account_id}","${params.Region}","${params.ECR_REPO_NAME}")
+                        
                 }
             }
         }
