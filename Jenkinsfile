@@ -104,7 +104,7 @@ pipeline{
                 steps{
                     script{
 
-                        dockerImageCleanUp("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                       dockerImageCleanUp("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                     }
                 }        
             }
