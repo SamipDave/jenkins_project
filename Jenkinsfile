@@ -86,7 +86,7 @@ pipeline{
                 steps{
                    script{
                         
-                        dockerImageScan("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
+                        dockerImageScan --skip-db-update ("${params.ImageName}","${params.ImageTag}","${params.DockerHubUser}")
                 }
             }
        }
